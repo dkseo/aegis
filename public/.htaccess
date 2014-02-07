@@ -1,0 +1,12 @@
+RewriteEngine On
+# 파일 있으면 해당 파일 출력
+#RewriteCond %{REQUEST_FILENAME} -s [OR]
+#RewriteCond %{REQUEST_FILENAME} -l [OR]
+#RewriteCond %{REQUEST_FILENAME} -d
+#RewriteRule ^.*$ - [NC,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+# 리다이렉트
+#RewriteCond %{REQUEST_URI}::$1 ^(/.+)(.+)::\2$
+#RewriteRule ^(.*) - [E=BASE:%1]
+#RewriteRule ^(.*)$ %{ENV:BASE}index.php [NC,L]
+RewriteRule ^.*$ index.php [NC,L]

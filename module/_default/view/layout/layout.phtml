@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>AEGIS_dev</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <script src="/js/jquery.1.11.0.min.js"></script>
+    </head>
+
+    <body>
+
+        <header>
+            <div>
+                <dl>
+                    <dt><a href="/">LOGO</a></dt>
+                    <dd><a href="/p/overview">overview</a></dd>
+                    <dd><a href="/p/services">services</a></dd>
+                    <dd><a href="/p/support">support</a></dd>
+                </dl>
+
+                <dl>
+                    <dd><a href="/auth/signUp/">sign-Up</a></dd>
+                    <dd><a href="/auth/signIn/">sign-In</a></dd>
+                </dl>
+            </div>
+        </header>
+
+        <hr />
+
+        <content>
+            <?php
+                echo $contents;
+            ?>
+        </content>
+
+        <hr />
+
+        <footer>
+            <div>[[bottom]]</div>
+        </footer>
+
+    </body>
+</html>
