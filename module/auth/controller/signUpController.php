@@ -4,9 +4,9 @@
  */
 
 namespace module\auth\controller;
+use classes\system\framework\dkFrameWork;
 
-
-class signUpController
+class signUpController extends dkFrameWork
 {
 
     // init - redirect to step1
@@ -18,9 +18,22 @@ class signUpController
     #####################################
     ## step #1
     #####################################
+    // step1 이메일 비번 입력 받기
     public function step1Action(  )
     {
 
+    }
+
+    // step1 이메일 비번 입력 받은거 처리하기
+    public function step1_processingAction(  )
+    {
+        // referer 검사
+        if ( $this->value->server->referer != "/auth/signUp/step1" ) {
+            echo $this->value->server->host;
+            $this->script->location( $this->value->server->host . "/");
+
+        }
+        //debug($this->value);
     }
 
     #####################################

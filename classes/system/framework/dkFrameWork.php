@@ -15,6 +15,7 @@ Namespace classes\system\framework;
 use classes\system\framework\moduleLoader;
 use classes\system\framework\routeLoader;
 use classes\system\framework\uriLoader;
+use classes\system\framework\scriptFunction;
 
 
 class dkFrameWork
@@ -35,6 +36,9 @@ class dkFrameWork
 
         // default 모듈의 config파일 load
         $this->LoadDefaultModuleConfig();
+
+        // 변수 만들기
+        $this->BuildValue();
 
         // 현재 접속한 URI의 환경 설정 Load
         // 모듈, 컨트롤러, 액션, 뷰 등
@@ -145,6 +149,40 @@ class dkFrameWork
 
 
     #################################
+    ## 변수 만들기
+    #################################
+    public function BuildValue()
+    {
+        /**
+         * Function Load
+         */
+        $this->script = new scriptFunction;
+
+        /**
+         * $_SERVER
+         */
+        $this->value->server->protocal = ($_SERVER["SERVER_PORT"] == "80")?"http://":"https://";
+        $this->value->server->host = $this->value->server->protocal . $_SERVER["HTTP_HOST"];
+        $this->value->server->referer = str_replace( $this->value->server->host, "", $_SERVER["HTTP_REFERER"]);
+        $this->value->server->remote_addr = $_SERVER["REMOTE_ADDR"];
+
+
+
+        //debug($_SERVER);
+
+        /**
+         * $_POST
+         */
+        if(count($_POST)){
+            foreach ( $_POST as $key => $val ){
+                $this->value->post->$key = $val;
+            }
+        }
+
+    }
+
+
+    #################################
     ## 프레임워크 시작
     #################################
     public function RunningFW()
@@ -186,7 +224,5 @@ class dkFrameWork
         }else{
             $layout = require_once $layout;
         }
-
-
     }
 }
