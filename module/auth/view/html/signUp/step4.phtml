@@ -1,0 +1,67 @@
+	<div class="sub_container">
+		<div class="content">
+			<div class="register_status_bar2">
+				<ul>
+					<li>STEP 01 >></li>
+					<li>STEP 02 >></li>
+					<li>STEP 03 >></li>
+					<li><span class="on">STEP 04 >></span></li>
+					<li>STEP 05</li>
+				</ul>
+			</div>
+			<div class="register_step4_msg_bar">
+				<p>Please fill out the form below. We don't require any start-up fees. Usage fees depends on what you use and how much you use.</p>
+			</div>
+			<h3>Enter Your Payment Information Below</h3>
+			<!-- <p>Your credit card will not be charged until you begin using Pcloud, and many of your applications and uses of Pcloud may be able to operate within the Pcloud free usage tier. If your monthly usage goes beyond the free tier, your Pcloud service charges will be billed to the credit card you provide below. View detailed service pricing</p> -->
+
+			<form method="post" name="frmRegisterStep4" id="frmRegisterStep4" action="/auth/signUp/step4_process">
+			<div class="layerBox2 register_form_box">
+
+				<ul class="inputListRegisterStep4">
+					<li><p class="font_set_orange">* required fields</p></li>
+					<li><label>Credit Card<span class="font_set_orange">*</span> :</label>
+						<select name="userCreditCard" id="userCreditCard">
+							<option value="">--</option>
+                            <option>VISA</option>
+							<option>MASTER</option>
+						</select>
+					</li>
+					<li>
+                        <label>Card Number<span class="font_set_orange">*</span> :</label>
+                        <input type="text" name="cardNumber[0]" maxlength="4" style="width:65px" /> -
+                        <input type="text" name="cardNumber[1]" maxlength="4" style="width:65px" /> -
+                        <input type="text" name="cardNumber[2]" maxlength="4" style="width:65px" /> -
+                        <input type="text" name="cardNumber[3]" maxlength="4" style="width:65px" />
+                    </li>
+					<li><label>Cardholder's Name<span class="font_set_orange">*</span> :</label><input type="text" name="cardOwnerName"/></li>
+
+					<li><label>ExpirationDate<span class="font_set_orange">*</span> :</label>
+						<select class="select_month" name="expMonth" id="expMonth">
+                            <option value="">month</option>
+                        <?php for($i=1; $i<=12; $i++){?>
+                            <option><?php echo str_pad($i, 2, "0", STR_PAD_LEFT)?></option>
+                        <?}?>
+
+						</select>
+						<select class="select_year" name="expYear" id="expYear">
+							<option value="">year</option>
+						<?php for($i=1; $i<=10; $i++){?>
+                            <option><?php echo date("Y", strtotime("+$i year", time()))?></option>
+                        <?}?>
+						</select>
+					</li>
+
+				</ul>
+
+			</div>
+
+			<div class="btn"><a id="btnRegisterStep4Submit"><span>Step5 >></span></a></div>
+
+            <input type=submit>
+			</form>
+		</div>
+
+	</div>
+
+

@@ -1,4 +1,38 @@
-<h2># step1</h2>
+<div class="sub_container">
+    <div class="content">
+        <div class="register_status_bar">
+            <ul>
+                <li><span class="on">STEP 01 >></span></li>
+                <li>STEP 02 >></li>
+                <li>STEP 03 >></li>
+                <li>STEP 04 >></li>
+                <li>STEP 05</li>
+            </ul>
+        </div>
+        <h3>Create a [Aegis] Account</h3>
+        <p>Use the form below to create login credentials that can be used for [Aegis].</p>
+
+        <form name="authFrom" method="post" target="_self" action="./step1_processing">
+
+        <div class="layerBox2 register_form_box">
+            <!-- form method="post" name="frmRegisterStep1" id="frmRegisterStep1" -->
+            <ul class="inputListRegisterStep1">
+                <li><p class="font_set_orange">* required fields</p></li>
+                <li><label for="userEmail">My e-mail address is<span class="font_set_orange">*</span> :</label><input type="email" name="user_email" id="userEmail" /><p class="error_msg"></p></li>
+                <li><p>note: this is the e-mail address that we will use to contact you about your account</p></li>
+                <li><label for="userPasswd">Enter a new password<span class="font_set_orange">*</span> :</label><input type="password" name="user_password" id="userPasswd" /><p class="error_msg"></p></li>
+                <li><label for="userPasswdConfirm">Type it again<span class="font_set_orange">*</span> :</label><input type="password" name="user_password_re" id="userPasswdConfirm" /><p class="error_msg"></p></li>
+            </ul>
+        </div>
+        <div class="btn"><!-- a id="btnRegisterStep1Submit"><span>Step2 >></span></a --><li><input type=submit></li></div>
+
+        </form>
+    </div>
+
+</div>
+
+
+<!-- h2># step1</h2>
 <label>회원가입 첫단계</label>
 <p>
     - 사용자 계정 정보 입력
@@ -11,10 +45,10 @@
 <ul>
     <li>email : <input type="text" name="user_email"></li>
     <li>password : <input type="password" name="user_password"></li>
-    <li>repeat password : <input type="password" name="user_password"></li>
+    <li>repeat password : <input type="password" name="user_password_re"></li>
     <li><input type=submit></li>
 </ul>
 
-</form>
+</form -->
 
 

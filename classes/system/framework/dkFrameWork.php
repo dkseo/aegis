@@ -163,7 +163,7 @@ class dkFrameWork
          */
         $this->value->server->protocal = ($_SERVER["SERVER_PORT"] == "80")?"http://":"https://";
         $this->value->server->host = $this->value->server->protocal . $_SERVER["HTTP_HOST"];
-        $this->value->server->referer = str_replace( $this->value->server->host, "", $_SERVER["HTTP_REFERER"]);
+        $this->value->server->referer = (isset($_SERVER["HTTP_REFERER"]))?str_replace( $this->value->server->host, "", $_SERVER["HTTP_REFERER"]) : NULL;
         $this->value->server->remote_addr = $_SERVER["REMOTE_ADDR"];
 
 

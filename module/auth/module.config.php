@@ -15,6 +15,8 @@ return array(
             "module",
             "controller",
             "action",
+            "arg1",
+            "arg2",
         ),
 
         "defaults" => array(
